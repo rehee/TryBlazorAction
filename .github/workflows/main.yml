@@ -22,7 +22,7 @@ jobs:
         dotnet-version: 5.0.101
         
     - name: Publish .Net Core Project
-      run: dotnet push -c Release -o release --nologo
+      run: dotnet publish -c Release -o release --nologo
       
     - name: Change base-tag in index.html from / to TryBlazorAction
       run: sed -i 's/<base href="\/"\/>/<base href="\/TryBlazorAction\/"/>/g' release/wwwroot/index.html
